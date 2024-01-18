@@ -8,6 +8,7 @@ Kekatos, M. (2023, July 21). How artificial intelligence is being used to detect
 
 
 **Installation**
+
 This code was written and set up for classification within Google Colab.
 1) Access Google Colab and open a new notebook
 2) Clone the repository in Google Colab using
@@ -17,11 +18,66 @@ This code was written and set up for classification within Google Colab.
 5) Run code and explore
 
 **Data Sources**
+
 This image data was sourced from Kaggle as an open source database compilated by author Mohamed Hany from multiple hospital databases. Linked below to download image dataset.
 https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images
 This dataset consists of 1,000 labeled images of the 3 subcategories of non-small cell lung cancer and healthy lungs (Adenocarcinoma, large cell carcinoma,  and squamous cell carcinoma).
 
 **Code**
+#Model 1
+
+model= Sequential()
+
+model.add(layers.Conv2D(32, (3, 3), activation='relu',input_shape=(224, 224, 3)))
+
+model.add(layers.MaxPooling2D((2, 2)))
+
+model.add(layers.Conv2D(64, (3, 3), activation='relu'))
+
+model.add(layers.MaxPooling2D((2, 2)))
+
+model.add(layers.Conv2D(128, (3, 3), activation='relu'))
+
+model.add(layers.MaxPooling2D((2, 2)))
+
+model.add(layers.Flatten())
+
+model.add(Dense(128, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(4, activation='softmax'))
+
+model.summary()
+
+#Model 2
+
+model1= Sequential()
+
+model1.add(layers.Conv2D(32, (3, 3), activation='relu',input_shape=(224, 224, 3)))
+
+model1.add(layers.Conv2D(32, (3, 3), activation='relu'))
+
+model1.add(layers.MaxPooling2D((2, 2)))
+
+
+model1.add(layers.Conv2D(32, (3, 3), activation='relu'))
+
+model1.add(layers.MaxPooling2D((2, 2)))
+
+
+model1.add(layers.Conv2D(64, (3, 3), activation='relu'))
+model1.add(layers.Conv2D(64, (3, 3), activation='relu'))
+
+model1.add(layers.MaxPooling2D((2, 2)))
+
+
+model1.add(layers.Flatten())
+
+model1.add(Dense(512, activation='relu'))
+model1.add(Dropout(0.5))
+
+model1.add(Dense(4, activation='softmax'))
+
+model1.summary()
 
 **Results**
 
