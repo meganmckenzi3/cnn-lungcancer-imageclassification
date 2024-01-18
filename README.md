@@ -86,4 +86,4 @@ model1.summary()
 Smaller image datasets face issues with overfitting, which can cause an inflated accuracy. During the modeling process I experimented with data augmentation, drop out layers, hyperparamter tuning and regularization of the image data to improve the loss between the validation accuracy and training accuracy. The best model achieved a 98% training accuracy and a 79% validation accuracy which is considered statistically significant. 
 
 **Future Work**
-I hope that CNN's within the medical indsutry can be used to aid doctors and m
+I hope that CNN's within the medical indsutry can be used to aid doctors and those in medical imaging to make more accurate and earlier diagnoses of non-small cell lung cancer. This will result in better long term outcomes for those patients.
