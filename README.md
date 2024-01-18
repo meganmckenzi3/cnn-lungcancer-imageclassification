@@ -24,7 +24,8 @@ https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images
 This dataset consists of 1,000 labeled images of the 3 subcategories of non-small cell lung cancer and healthy lungs (Adenocarcinoma, large cell carcinoma,  and squamous cell carcinoma).
 
 **Code**
-#Model 1
+
+# Model 1
 
 model= Sequential()
 
@@ -48,7 +49,9 @@ model.add(Dense(4, activation='softmax'))
 
 model.summary()
 
-#Model 2
+
+# Model 2
+
 
 model1= Sequential()
 
@@ -80,5 +83,7 @@ model1.add(Dense(4, activation='softmax'))
 model1.summary()
 
 **Results**
+Smaller image datasets face issues with overfitting, which can cause an inflated accuracy. During the modeling process I experimented with data augmentation, drop out layers, hyperparamter tuning and regularization of the image data to improve the loss between the validation accuracy and training accuracy. The best model achieved a 98% training accuracy and a 79% validation accuracy which is considered statistically significant. 
 
 **Future Work**
+I hope that CNN's within the medical indsutry can be used to aid doctors and m
